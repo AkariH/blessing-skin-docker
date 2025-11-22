@@ -9,7 +9,9 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     libpq-dev \
     libfreetype6-dev \
-    && docker-php-ext-configure gd --with-freetype \
+    libjpeg62-turbo-dev \
+    fonts-dejavu-core \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install pdo_mysql pdo_pgsql zip gd mbstring xml \
     && a2enmod rewrite \
     && sed -i 's/80/8000/g' /etc/apache2/ports.conf /etc/apache2/sites-available/*.conf \
