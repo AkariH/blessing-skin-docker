@@ -32,4 +32,4 @@ RUN curl -L https://github.com/bs-community/blessing-skin-server/releases/downlo
 EXPOSE 8000
 
 # 4. 启动命令 (包含数据库迁移)
-CMD sh -c "php artisan migrate --force && apache2-foreground"
+CMD sh -c "apache2-foreground"
